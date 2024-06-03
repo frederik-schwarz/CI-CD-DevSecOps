@@ -5,4 +5,9 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    """Returns Hello World
+
+    Returns:
+        _type_: Dict
+    """
+    return {"message": "Hello Worl"}
