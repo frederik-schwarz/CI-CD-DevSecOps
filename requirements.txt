@@ -1,0 +1,2 @@
+fastapi
+ruff==0.4.7
