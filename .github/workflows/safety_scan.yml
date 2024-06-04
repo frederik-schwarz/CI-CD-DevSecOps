@@ -1,0 +1,11 @@
+name: Python Safety Scan
+on: [push]
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Safety CLI to check for vulnerabilities
+        uses: pyupio/safety-3@main
+        with:
+          api-key: ${{ secrets.SAFETY_API_KEY }}
