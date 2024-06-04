@@ -3,12 +3,12 @@ name: Safety
 on: [push]
 
 jobs: 
-  sast_scan:
+  sca_scan:
     name: Run Safety Scan
     runs-on: ubuntu-latest
 
       steps:
-      - name: Python Safety Scan
-        uses: pyupio/safety-action@v1
-        with:
-          api-key: ${{ secrets.SAFETY_API_KEY }}
+        - name: Python Safety Scan
+          uses: pyupio/safety-action@v1
+          with:
+            api-key: ${{ secrets.SAFETY_API_KEY }}
