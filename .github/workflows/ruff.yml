@@ -3,7 +3,8 @@ name: Ruff
 on: [push]
 
 jobs:
-  ruff:
+  ruff_check:
+    name: Run Ruff Check
     runs-on: ubuntu-latest
 
     steps:
