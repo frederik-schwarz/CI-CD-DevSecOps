@@ -1,7 +1,8 @@
 name: Python Safety Scan
 on: [push]
 jobs:
-  security:
+  safety_scan:
+    name: Safety Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
