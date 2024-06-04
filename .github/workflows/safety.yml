@@ -6,9 +6,9 @@ jobs:
   sca_scan:
     name: Run Safety Scan
     runs-on: ubuntu-latest
-
       steps:
+        - uses: actions/checkout@v4
         - name: Python Safety Scan
-          uses: pyupio/safety-action@v1
+          uses: pyupio/safety-3@main
           with:
             api-key: ${{ secrets.SAFETY_API_KEY }}
