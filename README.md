@@ -1,1 +1,1 @@
-![ci/cd diagram](./cd_workflow.png)
+![ci/cd diagram](./pipeline.png)
