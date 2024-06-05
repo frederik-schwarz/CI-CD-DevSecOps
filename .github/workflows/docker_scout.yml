@@ -1,0 +1,28 @@
+name: Bandit
+
+on: [push]
+
+jobs: 
+  docker_scout:
+    name: Docker Scout
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Docker
+      uses: docker-practice/actions-setup-docker@v1
+      with:
+        docker_version: '25.0.0'
+    
+    - name: Build Docker Image
+      run: docker build -t app:latest .
+    
+    - name: Docker Scout
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh
+        sh install-scout.sh
+        docker scout quickview
+        docker scout cves
+
