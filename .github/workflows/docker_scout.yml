@@ -22,5 +22,6 @@ jobs:
     - name: Docker Scout
       run: |
         curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s --
+        echo ${{ secret.DOCKER_PASSWORD }} | docker login -u ${{ secret.DOCKER_USERNAME }}
         docker scout quickview
         docker scout cves
