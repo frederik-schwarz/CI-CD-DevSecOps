@@ -17,7 +17,7 @@ jobs:
         docker_version: '25.0.0'
     
     - name: Build Docker Image
-      run: docker build -t app:latest .
+      run: docker build -f Dockerfile -t app:latest .
     
     - name: Docker Scout
       run: |
