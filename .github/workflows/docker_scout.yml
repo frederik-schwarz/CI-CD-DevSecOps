@@ -19,11 +19,18 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - 
+        name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: ci-cd-app:latest
+      -
         name: Docker Scout
         id: docker-scout
         uses: docker/scout-action@v1
         with:
           command: cves
+          image: ci-cd-app:latest
           to-latest: true
           ignore-base: true
           ignore-unchanged: true
