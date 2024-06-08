@@ -23,14 +23,14 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ci-cd-app:latest
+          tags: fred101202/ci-cd:latest
       -
         name: Docker Scout
         id: docker-scout
         uses: docker/scout-action@v1
         with:
           command: cves
-          image: ci-cd-app:latest
+          image: fred101202/ci-cd:latest
           to-latest: true
           ignore-base: true
           ignore-unchanged: true
